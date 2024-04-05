@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AntiqueAtlas</title>
+    <link rel="stylesheet" href="{% static 'LandingPage/style.css' %}">
+    <script src="{% static 'LandingPage/script.js' %}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo"><img src="{% static '/LandingPage/Images/logo.png' %}" width="210px" height="82px"></h2>
+                </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/admin">ADMIN</a></li>
+                    <li><a href="/Contact Us">CONTACT</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="search">
+                <!--<form action="/search" method="GET"> 
+                    <input class="srch" type="search" name="query" placeholder="Type To Search">
+                    <button type="submit" class="btn">Search</button>
+                </form>-->
+                <!-- <input class="srch" type="search" name="" placeholder="Type To Search"> -->
+                <a href="/search"> <button class="btn">Browse..</button></a>
+            </div>
+
+        </div> 
+        <div class="content">
+            <h1>Take a look at our <br><span>ANTIQUE ATLAS</span> <br>& embrace the past!!</h1>
+           <!-- <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque 
+                expedita atque eveniet <br> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus 
+                <br> a quae totam ipsa illum minus laudantium?</p>-->
+
+           </div>
+    </div>
+    
+    <div id="image-track">
+    {% for i in Images%} 
+        <img class="image marquee" src="{{i}}" draggable="false"/>
+    {%endfor%}
+    </div>
+
+</body>
+</html>
